@@ -1,6 +1,7 @@
 import {useState} from "react";
 import React from 'react';
 import {SwiperSlide} from "swiper/react/swiper-react";
+import axios from "axios";
 
 const Shifts = (props) => {
 	let workers = 0;
@@ -57,22 +58,33 @@ const Shifts = (props) => {
 		return rows;
 	}
 
+	const testAjax = () => {
+		let json = JSON.stringify({
+			email: 'filip@filip.com',
+			password: '12345'
+		});
+		axios.post('http://localhost/osowiec/login.php', json)
+			.then(res => {
+				console.log(res.data.email);
+			})
+	}
 
 	return (
-		<table>
-			<thead>
-				<tr>
-					<th>Pozicija</th>
-					<th>Prva smena:</th>
-					<th>Druga smena:</th>
-					<th>Treca smena:</th>
-				</tr>
-			</thead>
-			<tbody>
-				{makeEmployersRow(true).map(el => el)}
-				{makeEmployersRow(false).map(el => el)}
-			</tbody>
-		</table>
+		// <table>
+		// 	<thead>
+		// 		<tr>
+		// 			<th>Pozicija</th>
+		// 			<th>Prva smena:</th>
+		// 			<th>Druga smena:</th>
+		// 			<th>Treca smena:</th>
+		// 		</tr>
+		// 	</thead>
+		// 	<tbody>
+		// 		{makeEmployersRow(true).map(el => el)}
+		// 		{makeEmployersRow(false).map(el => el)}
+		// 	</tbody>
+		// </table>
+		<button onClick={testAjax}>CLICK ME</button>
 	);
 }
 
