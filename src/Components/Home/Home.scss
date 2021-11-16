@@ -1,0 +1,26 @@
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  table {
+    border: 1px solid black;
+
+    th {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    td, th {
+      padding: 1rem 2rem;
+      border: 1px solid black;
+    }
+  }
+}
+
+.Home {
+  h2, h1 {
+    text-align: center;
+  }
+}
