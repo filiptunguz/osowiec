@@ -1,0 +1,14 @@
+.register {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

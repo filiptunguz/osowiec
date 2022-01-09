@@ -1,3 +1,24 @@
+.visible-nav {
+  width: 100%;
+}
+
+.mobile-menu {
+  display: none;
+  background-color: black;
+
+  @media (max-width: 990px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+    cursor: pointer;
+  }
+}
+
 nav {
   width: 100%;
   background-color: black;
@@ -7,6 +28,34 @@ nav {
   justify-content: center;
   gap: 1rem;
   align-items: center;
+  transition: 200ms width ease-in-out;
+  overflow: hidden;
+
+  span {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-style: normal;
+    font-size: 3rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  @media (max-width: 990px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    height: 100vh;
+    width: 0;
+    z-index: 101;
+
+    span {
+      display: block;
+    }
+  }
 
   a {
     padding: 1rem 2rem;

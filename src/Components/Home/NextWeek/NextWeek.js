@@ -13,11 +13,11 @@ const NextWeek = (props) => {
 			<Swiper
 				spaceBetween={50}
 				slidesPerView={1}
-				onSlideChange={() => console.log('slide change')}
-				onSwiper={(swiper) => console.log(swiper)}
+				// onSlideChange={() => console.log('slide change')}
+				// onSwiper={(swiper) => console.log(swiper)}
 			>
-				{days.map((el) => {
-					return <SwiperSlide>
+				{days.map((el, index) => {
+					return <SwiperSlide key={index}>
 						<h3>{el}</h3>
 						<Shifts />
 					</SwiperSlide>
